@@ -1,0 +1,36 @@
+/* features */
+.features__list {
+    display: flex;
+  }
+  .features__item:not(:last-child) {
+    margin-right: 30px;
+  }
+  .visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
+  
+  .features__icon {
+    display: flex;
+    background-color: var(--button-color);
+    width: 270px;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .features__caption {
+    color: var(--title-text-color);
+    font-weight: 700;
+    line-height: 1.14;
+    margin-bottom: 10px;
+  }
+  
