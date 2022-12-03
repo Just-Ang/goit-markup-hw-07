@@ -9,7 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./sass/main.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +18,7 @@
     />
   </head>
   <body>
-    <header>
+    <header class="">
       <div class="container container-header">
         <a href="./index.html" class="logo link">
           <span class="logo__accent">Web</span>Studio</a>
@@ -466,80 +466,80 @@
 
     <div data-modal class="backdrop is-hidden">
       <div class="modal">
-        <button class="close-button" data-modal-close>
-          <svg class="cross" width="11" height="11">
+        <button class="modal__close-button" data-modal-close>
+          <svg class="modal__cross" width="11" height="11">
             <use href="./images/symbol-defs.svg#icon-cross"></use>
           </svg>
         </button>
 
         <div class="form-container">
-          <form class="user-information">
-            <h2 class="form-title">Залиште свої дані, ми вам передзвонимо</h2>
+          <form class="user">
+            <h2 class="user__title">Залиште свої дані, ми вам передзвонимо</h2>
 
-            <label class="personal-inf"
+            <label class="user__personal-inf"
               >Ім'я
-              <div class="decor">
+              <div class="user__decor">
                 <input
                   type="text"
-                  class="personal-data"
+                  class="user__personal-data"
                   name="user-name"
                   autofocus
                 />
-                <svg class="modal-icon" width="12" height="12">
+                <svg class="user__modal-icon" width="12" height="12">
                   <use href="./images/symbol-defs.svg#icon-human"></use>
                 </svg>
               </div>
             </label>
 
-            <label class="personal-inf"
+            <label class="user__personal-inf"
               >Телефон
-              <div class="decor">
-                <input type="tel" name="user-tel" class="personal-data" />
-                <svg class="modal-icon" width="12" height="12">
+              <div class="user__decor">
+                <input type="tel" name="user-tel" class="user__personal-data" />
+                <svg class="user__modal-icon" width="12" height="12">
                   <use href="./images/symbol-defs.svg#icon-phone"></use>
                 </svg>
               </div>
             </label>
 
-            <label class="personal-inf"
+            <label class="user__personal-inf"
               >Пошта
-              <div class="decor">
-                <input type="email" name="user-email" class="personal-data" />
-                <svg class="modal-icon" width="12" height="12">
+              <div class="user__decor">
+                <input type="email" name="user-email" class="user__personal-data" />
+                <svg class="user__modal-icon" width="12" height="12">
                   <use href="./images/symbol-defs.svg#icon-mail"></use>
                 </svg>
               </div>
             </label>
-            <label class="personal-inf"
+            <label class="user__personal-inf"
               >Коментар
               <textarea
                 name="comments"
                 id="user-comment"
                 rows="10"
                 placeholder="Введіть текст"
-                class="personal-data comment"
+                class="user__personal-data user__comment"
               ></textarea>
             </label>
 
             <label class="agreement">
               <input
                 type="checkbox"
-                class="user-agreement"
+                class="agreement__user"
                 name="user-agreement"
                 value="submit"
               />
-              <span class="agreement-img-before">
-                <svg class="agreement-img" width="16" height="15">
+              <span class="agreement__img-before">
+                <svg class="agreement__img" width="16" height="15">
                   <use href="./images/symbol-defs.svg#icon-check"></use>
                 </svg>
               </span>
 
-              <p class="agreement-input">
+              <p class="agreement__input">
                 Погоджуюся з розсилкою та приймаю
-                <a href="" class="agreement-link">Умови договору</a>
+                <a href="" class="agreement__link">Умови договору</a>
               </p>
             </label>
-            <button type="submit" class="btn-send">Відправити</button>
+            <button type="submit" class="agreement__btn-send">Відправити</button>
           </form>
         </div>
       </div>

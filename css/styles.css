@@ -573,13 +573,14 @@ color: var(--accent-color);
   justify-content: center;
   margin-bottom: 50px;
 }
-.filter-button {
+/* .filter-button {
   padding: 6px 25px 6px 25px;
-}
-.filter-item:not(:last-child) {
+} */
+.filter__item:not(:last-child) {
   margin-right: 8px;
 }
-.filter-button {
+.filter__button {
+  padding: 6px 25px 6px 25px;
   color: var(--title-text-color);
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -603,18 +604,29 @@ color: var(--accent-color);
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
+
+
+/* ______PORTFOLIO_______ */
 .portfolio {
   display: flex;
   flex-wrap: wrap;
 }
-.portfolio-item {
+.portfolio__item {
   position: relative;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.overlay {
+.portfolio__item:hover,
+.portfolio__item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.portfolio__overlay {
   position: relative;
   overflow: hidden;
 }
-.overlay-text {
+.portfolio__text {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -629,45 +641,27 @@ color: var(--accent-color);
   line-height: 1.56;
   letter-spacing: 0.03em;
 }
-.portfolio-item:hover .overlay-text {
+.portfolio__item:hover .portfolio__text {
   transform: translateY(0);
 }
-/* .overlay-text {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.56;
-  letter-spacing: 0.03em;
-  color: var(--primary-white-color);
- 
-} */
 
-.portfolio-item {
-  margin-right: 30px;
-  margin-bottom: 30px;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.portfolio-item:hover,
-.portfolio-item:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-.portfolio-photo {
+.portfolio__photo {
   display: block;
 }
-.border {
+.portfolio__border {
   padding-top: 20px;
   border-right: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);
 }
-.portfolio-item:nth-child(3n) {
+.portfolio__item:nth-child(3n) {
   margin-right: 0;
 }
-.portfolio-item:nth-last-child(-n + 3) {
+.portfolio__item:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
 
-.name {
+.portfolio__name {
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 18px;
@@ -677,7 +671,7 @@ color: var(--accent-color);
   margin-bottom: 4px;
 }
 
-.form {
+.portfolio__form {
   color: var(--primary-text-color);
   font-size: 16px;
   line-height: 1.88;
@@ -685,6 +679,7 @@ color: var(--accent-color);
   margin-bottom: 20px;
 }
 
+/* -----------MODAL------------ */
 .backdrop {
   position: fixed;
   top: 0;
@@ -714,7 +709,7 @@ color: var(--accent-color);
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scaleX(0.1);
 }
-.close-button {
+.modal__close-button {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -729,17 +724,18 @@ color: var(--accent-color);
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.cross {
+.modal__cross {
   fill: var(--black-for-logo);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.close-button:hover .cross {
+.modal__close-button:hover .modal__cross {
   fill: var(--accent-color);
 }
 .form-container {
   padding: 40px;
 }
-.form-title {
+
+.user__title {
   margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
@@ -748,7 +744,7 @@ color: var(--accent-color);
   letter-spacing: 0.03em;
   color: var(--title-text-color);
 }
-.personal-inf {
+.user__personal-inf {
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
@@ -756,7 +752,7 @@ color: var(--accent-color);
   letter-spacing: 0.01em;
   color: var(--primary-text-color);
 }
-.personal-data {
+.user__personal-data {
   width: 448px;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -766,15 +762,15 @@ color: var(--accent-color);
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: #000;
 }
-.personal-data:focus {
+.user__personal-data:focus {
   outline: 0;
   outline-offset: 0;
   border: 1px solid var(--accent-color);
 }
-.decor {
+.user__decor {
   position: relative;
 }
-.modal-icon {
+.user__modal-icon {
   position: absolute;
   top: 14px;
   left: 12px;
@@ -782,10 +778,10 @@ color: var(--accent-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   height: 12px;
 }
-.personal-data:focus + .modal-icon {
+.user__personal-data:focus + .user__modal-icon {
   fill: var(--accent-color);
 }
-.personal-data.comment {
+.user__comment {
   display: flex;
   flex-direction: column;
   resize: none;
@@ -799,7 +795,7 @@ color: var(--accent-color);
   margin-bottom: 20px;
   color: #000;
 }
-.comment::placeholder {
+.user__comment::placeholder {
   color: rgba(117, 117, 117, 0.5);
   font-weight: 400;
   font-size: 12px;
@@ -807,7 +803,7 @@ color: var(--accent-color);
   letter-spacing: 0.01em;
   opacity: 1;
 }
-.user-agreement {
+.agreement__user {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -826,7 +822,7 @@ color: var(--accent-color);
   justify-content: center;
   margin-bottom: 30px;
 }
-.agreement-input {
+.agreement__input {
   display: inline-block;
   font-weight: 400;
   font-size: 14px;
@@ -835,11 +831,11 @@ color: var(--accent-color);
   color: var(--primary-text-color);
   margin-left: 9px;
 }
-.agreement-link {
+.agreement__link {
   color: var(--accent-color);
 }
 
-.agreement-img-before {
+.agreement__img-before {
   position: relative;
   display: inline-block;
   width: 16px;
@@ -851,19 +847,19 @@ color: var(--accent-color);
   box-sizing: content-box;
 }
 
-.agreement-img {
+.agreement__img {
   position: absolute;
   top: 0px;
   left: 0px;
   display: flex;
 }
 
-.user-agreement:checked + .agreement-img-before {
+.agreement__user:checked + .agreement__img-before {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
 }
 
-.btn-send {
+.agreement__btn-send {
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -882,7 +878,7 @@ color: var(--accent-color);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn-send:hover,
-.btn-send:focus {
+.agreement__btn-send:hover,
+.agreement__btn-send:focus {
   background-color: var(--hover-button-color);
 }
